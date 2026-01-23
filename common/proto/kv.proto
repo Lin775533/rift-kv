@@ -1,0 +1,57 @@
+syntax = "proto3";
+package kv;
+
+service KeyValue {
+  // --- Client API ---
+  rpc Set (SetRequest) returns (SetResponse);
+  rpc Get (GetRequest) returns (GetResponse);
+
+  // --- Internal Raft API (Node-to-Node) ---
+  // Sent by a Leader to replicate log entries (also serves as Heartbeat)
+  rpc AppendEntries (AppendEntriesRequest) returns (AppendEntriesResponse);
+  
+  // Sent by a Candidate to ask for votes
+  rpc RequestVote (VoteRequest) returns (VoteResponse);
+}
+
+// --- Client Messages ---
+message SetRequest {
+  string key = 1;
+  bytes value = 2;
+}
+
+message SetResponse {
+  bool success = 1;
+}
+
+message GetRequest {
+  string key = 1;
+}
+
+message GetResponse {
+  bytes value = 1;
+  bool found = 2;
+}
+
+// --- Raft Messages (We will implement logic for these later) ---
+
+message AppendEntriesRequest {
+  uint64 term = 1;          // Leader's current term
+  uint64 leader_id = 2;     // So followers can redirect clients
+  // We will add log entries here in Phase 3
+}
+
+message AppendEntriesResponse {
+  uint64 term = 1;          // Current term, for leader to update itself
+  bool success = 2;         // True if follower contained entry matching prevLogIndex
+}
+
+message VoteRequest {
+  uint64 term = 1;          // Candidate's term
+  uint64 candidate_id = 2;  // Who is requesting the vote?
+}
+
+message VoteResponse {
+  uint64 term = 1;          // Current term, for candidate to update itself
+  bool vote_granted = 2;    // True means candidate received vote
+}
