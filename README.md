@@ -26,7 +26,6 @@ graph TD
 
 The following sequence demonstrates how a write request (`SET`) is replicated and committed to ensure fault tolerance.
 
-```mermaid
 sequenceDiagram
     autonumber
     participant Client
@@ -179,6 +178,7 @@ To verify the system's resilience:
 This project is licensed under the MIT License.
 
 ```
+
 
 
 
