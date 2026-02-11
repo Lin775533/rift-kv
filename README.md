@@ -113,7 +113,7 @@ sequenceDiagram
 
 ##  Crash Recovery Workflow
 
-This diagram shows exactly how your `Storage` module (RocksDB) saves the day when a node restarts.
+This diagram shows exactly how  `Storage` module (RocksDB) saves the day when a node restarts.
 
 **The Story:**
 
@@ -275,7 +275,4 @@ To verify the system's resilience:
 
 This project is licensed under the MIT License.
 
-```
-
-```
 
