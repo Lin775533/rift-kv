@@ -1,5 +1,3 @@
-Here is the complete `README.md` file code. You can copy this entire block and paste it into your `README.md` file.
-
 ```markdown
 # rusty-kv: Distributed Key-Value Store
 
@@ -193,4 +191,3 @@ This project is licensed under the MIT License.
 
 ```
 
-```
