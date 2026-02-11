@@ -1,4 +1,4 @@
-```markdown
+```mermaid
 # rusty-kv: Distributed Key-Value Store
 
 **rusty-kv** is a fault-tolerant, distributed Key-Value store engineered in Rust. It implements the **Raft Consensus Algorithm** to ensure strong data consistency and high availability across a multi-node cluster. The system features leader election, log replication, and persistent storage using a Write-Ahead Log (WAL) architecture.
@@ -190,4 +190,5 @@ To verify the system's resilience:
 This project is licensed under the MIT License.
 
 ```
+
 
