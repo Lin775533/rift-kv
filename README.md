@@ -1,3 +1,14 @@
+Here is the corrected and polished `README.md`.
+
+**Key Fixes Made:**
+
+1. **Fixed Mermaid Diagrams:** Separated the System Architecture and Request Workflow diagrams into their own code blocks so they render correctly on GitHub.
+2. **Fixed Bash Commands:** Removed the Markdown link syntax (e.g., `[url](url)`) inside the code blocks, which would cause copy-paste errors in a terminal.
+3. **Cleaned Structure:** Fixed the indentation in the "Project Structure" section.
+
+You can copy the code block below directly.
+
+```markdown
 ## 🏗️ System Architecture
 
 The system consists of a cluster of independent nodes communicating via gRPC. Each node maintains its own RocksDB instance for persistence.
@@ -22,10 +33,13 @@ graph TD
     classDef plain fill:#f9f9f9,stroke:#333,stroke-width:2px;
     class Client,Leader,Follower1,Follower2 plain;
 
+```
+
 ## 🔄 Request Workflow (Log Replication)
 
 The following sequence demonstrates how a write request (`SET`) is replicated and committed to ensure fault tolerance.
 
+```mermaid
 sequenceDiagram
     autonumber
     participant Client
@@ -179,6 +193,4 @@ This project is licensed under the MIT License.
 
 ```
 
-
-
-
+```
