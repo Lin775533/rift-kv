@@ -1,4 +1,4 @@
-## 🏗️ System Architecture
+##  System Architecture
 
 The system consists of a cluster of independent nodes communicating via gRPC. Each node maintains its own RocksDB instance for persistence.
 
@@ -24,7 +24,7 @@ graph TD
 
 ```
 
-## 🔄 Request Workflow (Log Replication)
+##  Request Workflow (Log Replication)
 
 The following sequence demonstrates how a write request (`SET`) is replicated and committed to ensure fault tolerance.
 
@@ -61,6 +61,101 @@ sequenceDiagram
     Note over Leader, Followers: 4. Async Apply
     Leader->>Followers: Heartbeat (Commit Index = N)
     Followers->>Disk: Apply to State Machine (DB)
+
+```
+##  Leader Election Workflow
+
+This diagram shows what happens when the Leader crashes and a Follower takes over.
+
+**The Story:**
+
+1. **Leader Dies:** Node 1 stops sending heartbeats.
+2. **Timeout:** Node 2 waits (randomized 150-300ms) and gets no signal.
+3. **Candidacy:** Node 2 promotes itself to Candidate, increments Term, and asks for votes.
+4. **Victory:** Node 3 votes for Node 2. Node 2 gets a majority (2/3) and becomes the new Leader.
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant OldLeader as Node 1 (Crashed)
+    participant Candidate as Node 2 (Candidate)
+    participant Follower as Node 3 (Follower)
+
+    Note over OldLeader, Follower: Normal Operation
+    OldLeader->>Candidate: Heartbeat (Term N)
+    OldLeader->>Follower: Heartbeat (Term N)
+    
+    Note over OldLeader: ☠️ CRASH! (Stops sending)
+    
+    Note over Candidate: Election Timeout (No Heartbeat)
+    Candidate->>Candidate: Role = Candidate
+    Candidate->>Candidate: Term = N + 1
+    Candidate->>Candidate: Vote for Self
+    
+    Note over Candidate, Follower: Request Votes
+    Candidate->>Follower: RequestVote RPC (Term N+1)
+    
+    activate Follower
+    Note over Follower: Checks Term & Log
+    Follower-->>Candidate: VoteGranted = True
+    deactivate Follower
+
+    Note over Candidate: Count Votes (2/3 Majority)
+    Candidate->>Candidate: Role = Leader
+    
+    Note over Candidate, Follower: Assert Authority
+    Candidate->>Follower: Heartbeat (I am Leader)
+    Candidate->>OldLeader: (Network Fail - Old Leader is dead)
+
+```
+
+---
+
+##  Crash Recovery Workflow
+
+This diagram shows exactly how your `Storage` module (RocksDB) saves the day when a node restarts.
+
+**The Story:**
+
+1. **Crash:** Node 2 (Follower) turns off.
+2. **Restart:** You run `cargo run...`.
+3. **Disk Load:** The node reads `current_term` and `voted_for` from the `current` and `MANIFEST` files in RocksDB.
+4. **Rejoin:** It rejoins as a Follower. It doesn't need to re-download the whole history because the Logs are still on disk!
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant Leader as Node 1 (Leader)
+    participant Node2 as Node 2 (Crashed)
+    participant Disk as Node 2 Disk (RocksDB)
+
+    Note over Node2: ☠️ SYSTEM CRASH
+    
+    Note over Leader: Leader continues working...
+    Leader->>Leader: Log Index = 100
+    
+    Note over Node2: 🔄 RESTART (cargo run)
+    activate Node2
+    Node2->>Disk: Load "current_term"
+    Disk-->>Node2: Term = 5
+    Node2->>Disk: Load "voted_for"
+    Disk-->>Node2: VotedFor = None
+    
+    Note over Node2: state.last_log_index = 90
+    Note over Node2: (I am behind by 10 logs)
+    
+    Node2->>Leader: (Connects to Cluster)
+    deactivate Node2
+
+    Note over Leader, Node2: Sync Missing Data
+    Leader->>Node2: AppendEntries (PrevIndex=90, Entries=[91..100])
+    activate Node2
+    Node2->>Disk: Write Logs 91-100
+    Disk-->>Node2: Success
+    Node2-->>Leader: Success (Synced)
+    deactivate Node2
+    
+    Note over Node2: 🟢 Fully Recovered
 
 ```
 
@@ -183,6 +278,4 @@ This project is licensed under the MIT License.
 ```
 
 ```
-
-
 
