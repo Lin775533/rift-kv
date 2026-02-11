@@ -1,4 +1,3 @@
-```markdown
 ## 🏗️ System Architecture
 
 The system consists of a cluster of independent nodes communicating via gRPC. Each node maintains its own RocksDB instance for persistence.
@@ -184,5 +183,6 @@ This project is licensed under the MIT License.
 ```
 
 ```
+
 
 
