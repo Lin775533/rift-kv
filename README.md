@@ -1,37 +1,26 @@
-```mermaid
-# rusty-kv: Distributed Key-Value Store
-
-**rusty-kv** is a fault-tolerant, distributed Key-Value store engineered in Rust. It implements the **Raft Consensus Algorithm** to ensure strong data consistency and high availability across a multi-node cluster. The system features leader election, log replication, and persistent storage using a Write-Ahead Log (WAL) architecture.
-
-![Rust](https://img.shields.io/badge/Rust-1.75%2B-000000?style=flat&logo=rust)
-![License](https://img.shields.io/badge/License-MIT-blue?style=flat)
-![Status](https://img.shields.io/badge/Status-Active-success?style=flat)
-
----
-
 ## 🏗️ System Architecture
 
 The system consists of a cluster of independent nodes communicating via gRPC. Each node maintains its own RocksDB instance for persistence.
 
 ```mermaid
 graph TD
-    Client[Client Application] -->|gRPC Set/Get| Leader[Node 1 (Leader)]
-    
-    subgraph Cluster [Raft Cluster]
-        Leader -->|AppendEntries RPC| Follower1[Node 2 (Follower)]
-        Leader -->|AppendEntries RPC| Follower2[Node 3 (Follower)]
+    Client["Client Application"] -->|"gRPC Set/Get"| Leader["Node 1 (Leader)"]
+
+    subgraph Cluster ["Raft Cluster"]
+        direction TB
+        Leader -->|"AppendEntries RPC"| Follower1["Node 2 (Follower)"]
+        Leader -->|"AppendEntries RPC"| Follower2["Node 3 (Follower)"]
     end
 
-    subgraph Storage [Persistence Layer]
-        Leader --- DB1[(RocksDB WAL)]
-        Follower1 --- DB2[(RocksDB WAL)]
-        Follower2 --- DB3[(RocksDB WAL)]
+    subgraph Storage ["Persistence Layer"]
+        direction TB
+        Leader --- DB1[("RocksDB WAL")]
+        Follower1 --- DB2[("RocksDB WAL")]
+        Follower2 --- DB3[("RocksDB WAL")]
     end
 
-    classDef node fill:#f9f9f9,stroke:#333,stroke-width:2px;
-    class Client,Leader,Follower1,Follower2 node;
-
-```
+    classDef plain fill:#f9f9f9,stroke:#333,stroke-width:2px;
+    class Client,Leader,Follower1,Follower2 plain;
 
 ## 🔄 Request Workflow (Log Replication)
 
@@ -190,5 +179,6 @@ To verify the system's resilience:
 This project is licensed under the MIT License.
 
 ```
+
 
 
