@@ -1,20 +1,33 @@
 syntax = "proto3";
 package kv;
 
+// The Service Definition
 service KeyValue {
   // --- Client API ---
+  // Clients use these to read/write data
   rpc Set (SetRequest) returns (SetResponse);
   rpc Get (GetRequest) returns (GetResponse);
 
   // --- Internal Raft API (Node-to-Node) ---
-  // Sent by a Leader to replicate log entries (also serves as Heartbeat)
+  // Leader uses this to replicate logs to Followers (and send heartbeats)
   rpc AppendEntries (AppendEntriesRequest) returns (AppendEntriesResponse);
   
-  // Sent by a Candidate to ask for votes
+  // Candidates use this to ask for votes during an election
   rpc RequestVote (VoteRequest) returns (VoteResponse);
 }
 
+// --- Data Structures ---
+
+// A single operation in the log (e.g., "SET X = 10")
+message LogEntry {
+  uint64 term = 1;      // The term when this entry was created
+  string command = 2;   // "SET" (We can add "DELETE" later)
+  string key = 3;       // The key to modify
+  bytes value = 4;      // The value to save
+}
+
 // --- Client Messages ---
+
 message SetRequest {
   string key = 1;
   bytes value = 2;
@@ -33,25 +46,33 @@ message GetResponse {
   bool found = 2;
 }
 
-// --- Raft Messages (We will implement logic for these later) ---
+// --- Raft Messages ---
 
 message AppendEntriesRequest {
-  uint64 term = 1;          // Leader's current term
-  uint64 leader_id = 2;     // So followers can redirect clients
-  // We will add log entries here in Phase 3
+  uint64 term = 1;            // Leader's current term
+  uint64 leader_id = 2;       // So followers can redirect clients to leader
+  
+  uint64 prev_log_index = 3;  // Index of log entry immediately preceding new ones
+  uint64 prev_log_term = 4;   // Term of prev_log_index entry
+  
+  repeated LogEntry entries = 5; // Log entries to store (empty for heartbeat)
+  
+  uint64 leader_commit = 6;   // Leader's commitIndex
 }
 
 message AppendEntriesResponse {
-  uint64 term = 1;          // Current term, for leader to update itself
-  bool success = 2;         // True if follower contained entry matching prevLogIndex
+  uint64 term = 1;            // Current term, for leader to update itself
+  bool success = 2;           // True if follower contained entry matching prevLogIndex
 }
 
 message VoteRequest {
-  uint64 term = 1;          // Candidate's term
-  uint64 candidate_id = 2;  // Who is requesting the vote?
+  uint64 term = 1;            // Candidate's term
+  uint64 candidate_id = 2;    // Candidate requesting vote
+  uint64 last_log_index = 3;  // Index of candidate's last log entry
+  uint64 last_log_term = 4;   // Term of candidate's last log entry
 }
 
 message VoteResponse {
-  uint64 term = 1;          // Current term, for candidate to update itself
-  bool vote_granted = 2;    // True means candidate received vote
+  uint64 term = 1;            // Current term, for candidate to update itself
+  bool vote_granted = 2;      // True means candidate received vote
 }

@@ -1,0 +1,286 @@
+2026/02/06-18:26:31.541675 af90 RocksDB version: 8.1.1
+2026/02/06-18:26:31.541954 af90 Compile date 2023-04-06 16:38:52
+2026/02/06-18:26:31.541996 af90 DB SUMMARY
+2026/02/06-18:26:31.542022 af90 DB Session ID:  FMAHV0LBJ8SL5HAYIC52
+2026/02/06-18:26:31.543379 af90 CURRENT file:  CURRENT
+2026/02/06-18:26:31.543438 af90 IDENTITY file:  IDENTITY
+2026/02/06-18:26:31.543630 af90 MANIFEST file:  MANIFEST-000010 size: 185 Bytes
+2026/02/06-18:26:31.543673 af90 SST files in db_50053 dir, Total Num: 1, files: 000008.sst 
+2026/02/06-18:26:31.543702 af90 Write Ahead Log file in db_50053: 000009.log size: 5081318 ; 
+2026/02/06-18:26:31.543727 af90                         Options.error_if_exists: 0
+2026/02/06-18:26:31.543750 af90                       Options.create_if_missing: 1
+2026/02/06-18:26:31.543978 af90                         Options.paranoid_checks: 1
+2026/02/06-18:26:31.543993 af90             Options.flush_verify_memtable_count: 1
+2026/02/06-18:26:31.544000 af90                               Options.track_and_verify_wals_in_manifest: 0
+2026/02/06-18:26:31.544006 af90        Options.verify_sst_unique_id_in_manifest: 1
+2026/02/06-18:26:31.544013 af90                                     Options.env: 0000028E6D5E4890
+2026/02/06-18:26:31.544019 af90                                      Options.fs: WinFS
+2026/02/06-18:26:31.544030 af90                                Options.info_log: 0000028E6D5B3B50
+2026/02/06-18:26:31.544040 af90                Options.max_file_opening_threads: 16
+2026/02/06-18:26:31.544049 af90                              Options.statistics: 0000000000000000
+2026/02/06-18:26:31.544058 af90                               Options.use_fsync: 0
+2026/02/06-18:26:31.544067 af90                       Options.max_log_file_size: 0
+2026/02/06-18:26:31.544076 af90                  Options.max_manifest_file_size: 1073741824
+2026/02/06-18:26:31.544086 af90                   Options.log_file_time_to_roll: 0
+2026/02/06-18:26:31.544094 af90                       Options.keep_log_file_num: 1000
+2026/02/06-18:26:31.544102 af90                    Options.recycle_log_file_num: 0
+2026/02/06-18:26:31.544111 af90                         Options.allow_fallocate: 1
+2026/02/06-18:26:31.544121 af90                        Options.allow_mmap_reads: 0
+2026/02/06-18:26:31.544130 af90                       Options.allow_mmap_writes: 0
+2026/02/06-18:26:31.544139 af90                        Options.use_direct_reads: 0
+2026/02/06-18:26:31.544148 af90                        Options.use_direct_io_for_flush_and_compaction: 0
+2026/02/06-18:26:31.544157 af90          Options.create_missing_column_families: 0
+2026/02/06-18:26:31.544167 af90                              Options.db_log_dir: 
+2026/02/06-18:26:31.544177 af90                                 Options.wal_dir: 
+2026/02/06-18:26:31.544186 af90                Options.table_cache_numshardbits: 6
+2026/02/06-18:26:31.544195 af90                         Options.WAL_ttl_seconds: 0
+2026/02/06-18:26:31.544205 af90                       Options.WAL_size_limit_MB: 0
+2026/02/06-18:26:31.544213 af90                        Options.max_write_batch_group_size_bytes: 1048576
+2026/02/06-18:26:31.544222 af90             Options.manifest_preallocation_size: 4194304
+2026/02/06-18:26:31.544231 af90                     Options.is_fd_close_on_exec: 1
+2026/02/06-18:26:31.544240 af90                   Options.advise_random_on_open: 1
+2026/02/06-18:26:31.544250 af90                    Options.db_write_buffer_size: 0
+2026/02/06-18:26:31.544260 af90                    Options.write_buffer_manager: 0000028E6D5FF4D0
+2026/02/06-18:26:31.544270 af90         Options.access_hint_on_compaction_start: 1
+2026/02/06-18:26:31.544278 af90           Options.random_access_max_buffer_size: 1048576
+2026/02/06-18:26:31.544289 af90                      Options.use_adaptive_mutex: 0
+2026/02/06-18:26:31.544295 af90                            Options.rate_limiter: 0000000000000000
+2026/02/06-18:26:31.544302 af90     Options.sst_file_manager.rate_bytes_per_sec: 0
+2026/02/06-18:26:31.544308 af90                       Options.wal_recovery_mode: 2
+2026/02/06-18:26:31.544371 af90                  Options.enable_thread_tracking: 0
+2026/02/06-18:26:31.544388 af90                  Options.enable_pipelined_write: 0
+2026/02/06-18:26:31.544397 af90                  Options.unordered_write: 0
+2026/02/06-18:26:31.544406 af90         Options.allow_concurrent_memtable_write: 1
+2026/02/06-18:26:31.544415 af90      Options.enable_write_thread_adaptive_yield: 1
+2026/02/06-18:26:31.544423 af90             Options.write_thread_max_yield_usec: 100
+2026/02/06-18:26:31.544433 af90            Options.write_thread_slow_yield_usec: 3
+2026/02/06-18:26:31.544443 af90                               Options.row_cache: None
+2026/02/06-18:26:31.544452 af90                              Options.wal_filter: None
+2026/02/06-18:26:31.544463 af90             Options.avoid_flush_during_recovery: 0
+2026/02/06-18:26:31.544473 af90             Options.allow_ingest_behind: 0
+2026/02/06-18:26:31.544483 af90             Options.two_write_queues: 0
+2026/02/06-18:26:31.544492 af90             Options.manual_wal_flush: 0
+2026/02/06-18:26:31.544500 af90             Options.wal_compression: 0
+2026/02/06-18:26:31.544508 af90             Options.atomic_flush: 0
+2026/02/06-18:26:31.544517 af90             Options.avoid_unnecessary_blocking_io: 0
+2026/02/06-18:26:31.544525 af90                 Options.persist_stats_to_disk: 0
+2026/02/06-18:26:31.544535 af90                 Options.write_dbid_to_manifest: 0
+2026/02/06-18:26:31.544544 af90                 Options.log_readahead_size: 0
+2026/02/06-18:26:31.544554 af90                 Options.file_checksum_gen_factory: Unknown
+2026/02/06-18:26:31.544564 af90                 Options.best_efforts_recovery: 0
+2026/02/06-18:26:31.544573 af90                Options.max_bgerror_resume_count: 2147483647
+2026/02/06-18:26:31.544583 af90            Options.bgerror_resume_retry_interval: 1000000
+2026/02/06-18:26:31.544592 af90             Options.allow_data_in_errors: 0
+2026/02/06-18:26:31.544602 af90             Options.db_host_id: __hostname__
+2026/02/06-18:26:31.544612 af90             Options.enforce_single_del_contracts: true
+2026/02/06-18:26:31.544621 af90             Options.max_background_jobs: 2
+2026/02/06-18:26:31.544631 af90             Options.max_background_compactions: -1
+2026/02/06-18:26:31.544640 af90             Options.max_subcompactions: 1
+2026/02/06-18:26:31.544650 af90             Options.avoid_flush_during_shutdown: 0
+2026/02/06-18:26:31.544659 af90           Options.writable_file_max_buffer_size: 1048576
+2026/02/06-18:26:31.544667 af90             Options.delayed_write_rate : 16777216
+2026/02/06-18:26:31.544676 af90             Options.max_total_wal_size: 0
+2026/02/06-18:26:31.544685 af90             Options.delete_obsolete_files_period_micros: 21600000000
+2026/02/06-18:26:31.544695 af90                   Options.stats_dump_period_sec: 600
+2026/02/06-18:26:31.544705 af90                 Options.stats_persist_period_sec: 600
+2026/02/06-18:26:31.544715 af90                 Options.stats_history_buffer_size: 1048576
+2026/02/06-18:26:31.544726 af90                          Options.max_open_files: -1
+2026/02/06-18:26:31.544732 af90                          Options.bytes_per_sync: 0
+2026/02/06-18:26:31.544737 af90                      Options.wal_bytes_per_sync: 0
+2026/02/06-18:26:31.544743 af90                   Options.strict_bytes_per_sync: 0
+2026/02/06-18:26:31.544748 af90       Options.compaction_readahead_size: 0
+2026/02/06-18:26:31.544753 af90                  Options.max_background_flushes: -1
+2026/02/06-18:26:31.544759 af90 Compression algorithms supported:
+2026/02/06-18:26:31.544768 af90 	kZSTD supported: 1
+2026/02/06-18:26:31.544774 af90 	kSnappyCompression supported: 1
+2026/02/06-18:26:31.544780 af90 	kBZip2Compression supported: 1
+2026/02/06-18:26:31.544785 af90 	kZlibCompression supported: 1
+2026/02/06-18:26:31.544791 af90 	kLZ4Compression supported: 1
+2026/02/06-18:26:31.544801 af90 	kXpressCompression supported: 0
+2026/02/06-18:26:31.544811 af90 	kLZ4HCCompression supported: 1
+2026/02/06-18:26:31.544822 af90 	kZSTDNotFinalCompression supported: 1
+2026/02/06-18:26:31.544886 af90 Fast CRC32 supported: Not supported on x86
+2026/02/06-18:26:31.544903 af90 DMutex implementation: std::mutex
+2026/02/06-18:26:31.547070 af90 [cc:5662] Recovering from manifest file: db_50053/MANIFEST-000010
+2026/02/06-18:26:31.547649 af90 [/db/column_family.cc:621] --------------- Options for column family [default]:
+2026/02/06-18:26:31.547673 af90               Options.comparator: leveldb.BytewiseComparator
+2026/02/06-18:26:31.547684 af90           Options.merge_operator: None
+2026/02/06-18:26:31.547693 af90        Options.compaction_filter: None
+2026/02/06-18:26:31.547701 af90        Options.compaction_filter_factory: None
+2026/02/06-18:26:31.547710 af90  Options.sst_partitioner_factory: None
+2026/02/06-18:26:31.547719 af90         Options.memtable_factory: SkipListFactory
+2026/02/06-18:26:31.547727 af90            Options.table_factory: BlockBasedTable
+2026/02/06-18:26:31.547806 af90            table_factory options:   flush_block_policy_factory: FlushBlockBySizePolicyFactory (0000028E6D5D4660)
+  cache_index_and_filter_blocks: 0
+  cache_index_and_filter_blocks_with_high_priority: 1
+  pin_l0_filter_and_index_blocks_in_cache: 0
+  pin_top_level_index_and_filter: 1
+  index_type: 0
+  data_block_index_type: 0
+  index_shortening: 1
+  data_block_hash_table_util_ratio: 0.750000
+  checksum: 4
+  no_block_cache: 0
+  block_cache: 0000028E6D5F5760
+  block_cache_name: LRUCache
+  block_cache_options:
+    capacity : 8388608
+    num_shard_bits : 4
+    strict_capacity_limit : 0
+    memory_allocator : None
+    high_pri_pool_ratio: 0.000
+    low_pri_pool_ratio: 0.000
+  persistent_cache: 0000000000000000
+  block_size: 4096
+  block_size_deviation: 10
+  block_restart_interval: 16
+  index_block_restart_interval: 1
+  metadata_block_size: 4096
+  partition_filters: 0
+  use_delta_encoding: 1
+  filter_policy: nullptr
+  whole_key_filtering: 1
+  verify_compression: 0
+  read_amp_bytes_per_bit: 0
+  format_version: 5
+  enable_index_compression: 1
+  block_align: 0
+  max_auto_readahead_size: 262144
+  prepopulate_block_cache: 0
+  initial_auto_readahead_size: 8192
+  num_file_reads_for_auto_readahead: 2
+2026/02/06-18:26:31.547818 af90        Options.write_buffer_size: 67108864
+2026/02/06-18:26:31.547827 af90  Options.max_write_buffer_number: 2
+2026/02/06-18:26:31.547836 af90          Options.compression: Snappy
+2026/02/06-18:26:31.547844 af90                  Options.bottommost_compression: Disabled
+2026/02/06-18:26:31.547853 af90       Options.prefix_extractor: nullptr
+2026/02/06-18:26:31.547862 af90   Options.memtable_insert_with_hint_prefix_extractor: nullptr
+2026/02/06-18:26:31.547870 af90             Options.num_levels: 7
+2026/02/06-18:26:31.547878 af90        Options.min_write_buffer_number_to_merge: 1
+2026/02/06-18:26:31.547886 af90     Options.max_write_buffer_number_to_maintain: 0
+2026/02/06-18:26:31.547895 af90     Options.max_write_buffer_size_to_maintain: 0
+2026/02/06-18:26:31.547903 af90            Options.bottommost_compression_opts.window_bits: -14
+2026/02/06-18:26:31.547912 af90                  Options.bottommost_compression_opts.level: 32767
+2026/02/06-18:26:31.547921 af90               Options.bottommost_compression_opts.strategy: 0
+2026/02/06-18:26:31.547929 af90         Options.bottommost_compression_opts.max_dict_bytes: 0
+2026/02/06-18:26:31.547937 af90         Options.bottommost_compression_opts.zstd_max_train_bytes: 0
+2026/02/06-18:26:31.547946 af90         Options.bottommost_compression_opts.parallel_threads: 1
+2026/02/06-18:26:31.547955 af90                  Options.bottommost_compression_opts.enabled: false
+2026/02/06-18:26:31.547964 af90         Options.bottommost_compression_opts.max_dict_buffer_bytes: 0
+2026/02/06-18:26:31.547972 af90         Options.bottommost_compression_opts.use_zstd_dict_trainer: true
+2026/02/06-18:26:31.547981 af90            Options.compression_opts.window_bits: -14
+2026/02/06-18:26:31.547989 af90                  Options.compression_opts.level: 32767
+2026/02/06-18:26:31.547998 af90               Options.compression_opts.strategy: 0
+2026/02/06-18:26:31.548006 af90         Options.compression_opts.max_dict_bytes: 0
+2026/02/06-18:26:31.548022 af90         Options.compression_opts.zstd_max_train_bytes: 0
+2026/02/06-18:26:31.548033 af90         Options.compression_opts.use_zstd_dict_trainer: true
+2026/02/06-18:26:31.548042 af90         Options.compression_opts.parallel_threads: 1
+2026/02/06-18:26:31.548050 af90                  Options.compression_opts.enabled: false
+2026/02/06-18:26:31.548059 af90         Options.compression_opts.max_dict_buffer_bytes: 0
+2026/02/06-18:26:31.548067 af90      Options.level0_file_num_compaction_trigger: 4
+2026/02/06-18:26:31.548075 af90          Options.level0_slowdown_writes_trigger: 20
+2026/02/06-18:26:31.548084 af90              Options.level0_stop_writes_trigger: 36
+2026/02/06-18:26:31.548092 af90                   Options.target_file_size_base: 67108864
+2026/02/06-18:26:31.548100 af90             Options.target_file_size_multiplier: 1
+2026/02/06-18:26:31.548109 af90                Options.max_bytes_for_level_base: 268435456
+2026/02/06-18:26:31.548117 af90 Options.level_compaction_dynamic_level_bytes: 0
+2026/02/06-18:26:31.548125 af90          Options.max_bytes_for_level_multiplier: 10.000000
+2026/02/06-18:26:31.548135 af90 Options.max_bytes_for_level_multiplier_addtl[0]: 1
+2026/02/06-18:26:31.548144 af90 Options.max_bytes_for_level_multiplier_addtl[1]: 1
+2026/02/06-18:26:31.548153 af90 Options.max_bytes_for_level_multiplier_addtl[2]: 1
+2026/02/06-18:26:31.548161 af90 Options.max_bytes_for_level_multiplier_addtl[3]: 1
+2026/02/06-18:26:31.548170 af90 Options.max_bytes_for_level_multiplier_addtl[4]: 1
+2026/02/06-18:26:31.548178 af90 Options.max_bytes_for_level_multiplier_addtl[5]: 1
+2026/02/06-18:26:31.548187 af90 Options.max_bytes_for_level_multiplier_addtl[6]: 1
+2026/02/06-18:26:31.548196 af90       Options.max_sequential_skip_in_iterations: 8
+2026/02/06-18:26:31.548204 af90                    Options.max_compaction_bytes: 1677721600
+2026/02/06-18:26:31.548213 af90   Options.ignore_max_compaction_bytes_for_input: true
+2026/02/06-18:26:31.548221 af90                        Options.arena_block_size: 1048576
+2026/02/06-18:26:31.548230 af90   Options.soft_pending_compaction_bytes_limit: 68719476736
+2026/02/06-18:26:31.548238 af90   Options.hard_pending_compaction_bytes_limit: 274877906944
+2026/02/06-18:26:31.548247 af90                Options.disable_auto_compactions: 0
+2026/02/06-18:26:31.548259 af90                        Options.compaction_style: kCompactionStyleLevel
+2026/02/06-18:26:31.548271 af90                          Options.compaction_pri: kMinOverlappingRatio
+2026/02/06-18:26:31.548280 af90 Options.compaction_options_universal.size_ratio: 1
+2026/02/06-18:26:31.548288 af90 Options.compaction_options_universal.min_merge_width: 2
+2026/02/06-18:26:31.548296 af90 Options.compaction_options_universal.max_merge_width: 4294967295
+2026/02/06-18:26:31.548305 af90 Options.compaction_options_universal.max_size_amplification_percent: 200
+2026/02/06-18:26:31.548314 af90 Options.compaction_options_universal.compression_size_percent: -1
+2026/02/06-18:26:31.548324 af90 Options.compaction_options_universal.stop_style: kCompactionStopStyleTotalSize
+2026/02/06-18:26:31.548333 af90 Options.compaction_options_fifo.max_table_files_size: 1073741824
+2026/02/06-18:26:31.548341 af90 Options.compaction_options_fifo.allow_compaction: 0
+2026/02/06-18:26:31.548353 af90                   Options.table_properties_collectors: 
+2026/02/06-18:26:31.548363 af90                   Options.inplace_update_support: 0
+2026/02/06-18:26:31.548371 af90                 Options.inplace_update_num_locks: 10000
+2026/02/06-18:26:31.548379 af90               Options.memtable_prefix_bloom_size_ratio: 0.000000
+2026/02/06-18:26:31.548389 af90               Options.memtable_whole_key_filtering: 0
+2026/02/06-18:26:31.548397 af90   Options.memtable_huge_page_size: 0
+2026/02/06-18:26:31.548405 af90                           Options.bloom_locality: 0
+2026/02/06-18:26:31.548413 af90                    Options.max_successive_merges: 0
+2026/02/06-18:26:31.548422 af90                Options.optimize_filters_for_hits: 0
+2026/02/06-18:26:31.548492 af90                Options.paranoid_file_checks: 0
+2026/02/06-18:26:31.548505 af90                Options.force_consistency_checks: 1
+2026/02/06-18:26:31.548514 af90                Options.report_bg_io_stats: 0
+2026/02/06-18:26:31.548523 af90                               Options.ttl: 2592000
+2026/02/06-18:26:31.548531 af90          Options.periodic_compaction_seconds: 0
+2026/02/06-18:26:31.548539 af90  Options.preclude_last_level_data_seconds: 0
+2026/02/06-18:26:31.548548 af90    Options.preserve_internal_time_seconds: 0
+2026/02/06-18:26:31.548556 af90                       Options.enable_blob_files: false
+2026/02/06-18:26:31.548565 af90                           Options.min_blob_size: 0
+2026/02/06-18:26:31.548573 af90                          Options.blob_file_size: 268435456
+2026/02/06-18:26:31.548582 af90                   Options.blob_compression_type: NoCompression
+2026/02/06-18:26:31.548591 af90          Options.enable_blob_garbage_collection: false
+2026/02/06-18:26:31.548600 af90      Options.blob_garbage_collection_age_cutoff: 0.250000
+2026/02/06-18:26:31.548610 af90 Options.blob_garbage_collection_force_threshold: 1.000000
+2026/02/06-18:26:31.548619 af90          Options.blob_compaction_readahead_size: 0
+2026/02/06-18:26:31.548628 af90                Options.blob_file_starting_level: 0
+2026/02/06-18:26:31.548637 af90 Options.experimental_mempurge_threshold: 0.000000
+2026/02/06-18:26:31.551230 af90 [le_number is %llu, next_file_number is %llu, last_sequence is %llu, log_number is %llu,prev_log_number is %llu,max_column_family is %u,min_log_number_to_keep is %llu
+:5713] Recovered from manifest file:db_50053/MANIFEST-000010 succeeded,manifest_file_number is 10, next_file_number is 12, last_sequence is 6, log_number is 5,prev_log_number is 0,max_column_family is 0,min_log_number_to_keep is 5
+2026/02/06-18:26:31.551254 af90 [locate MANIFEST file in :5722] Column family [default] (ID 0), log number is 5
+2026/02/06-18:26:31.551733 af90 [a new Db, wal_dir contains existing log file: :537] DB ID: 09aa0269-03cb-11f1-96ad-50c2e8d5e32e
+2026/02/06-18:26:31.553917 af90 EVENT_LOG_v1 {"time_micros": 1770431191553882, "job": 1, "event": "recovery_started", "wal_files": [9]}
+2026/02/06-18:26:31.553940 af90 [:1031] Recovering log #9 mode 2
+2026/02/06-18:26:31.617618 af90 EVENT_LOG_v1 {"time_micros": 1770431191617528, "cf_name": "default", "job": 1, "event": "table_file_creation", "file_number": 13, "file_size": 182480, "file_checksum": "", "file_checksum_func_name": "Unknown", "smallest_seqno": 9, "largest_seqno": 66, "table_properties": {"data_size": 181486, "index_size": 52, "index_partitions": 0, "top_level_index_size": 0, "index_key_is_user_key": 1, "index_value_is_delta_encoded": 1, "filter_size": 0, "raw_key_size": 72, "raw_average_key_size": 18, "raw_value_size": 181365, "raw_average_value_size": 45341, "num_data_blocks": 3, "num_entries": 4, "num_filter_entries": 0, "num_deletions": 0, "num_merge_operands": 0, "num_range_deletions": 0, "format_version": 0, "fixed_key_len": 0, "filter_policy": "", "column_family_name": "default", "column_family_id": 0, "comparator": "leveldb.BytewiseComparator", "merge_operator": "nullptr", "prefix_extractor_name": "nullptr", "property_collectors": "[]", "compression": "Snappy", "compression_options": "window_bits=-14; level=32767; strategy=0; max_dict_bytes=0; zstd_max_train_bytes=0; enabled=0; max_dict_buffer_bytes=0; use_zstd_dict_trainer=1; ", "creation_time": 1770431191, "oldest_key_time": 0, "file_creation_time": 0, "slow_compression_estimated_data_size": 0, "fast_compression_estimated_data_size": 0, "db_id": "09aa0269-03cb-11f1-96ad-50c2e8d5e32e", "db_session_id": "FMAHV0LBJ8SL5HAYIC52", "orig_file_number": 13, "seqno_to_time_mapping": "N/A"}}
+2026/02/06-18:26:31.621013 af90 EVENT_LOG_v1 {"time_micros": 1770431191620998, "job": 1, "event": "recovery_finished"}
+2026/02/06-18:26:31.621909 af90 [:5180] Creating manifest 15
+2026/02/06-18:26:31.664093 af90 [ %lli, total_trash_size %llu max_trash_db_ratio %lf:77] Deleted file db_50053/000009.log immediately, rate_bytes_per_sec 0, total_trash_size 0 max_trash_db_ratio 0.250000
+2026/02/06-18:26:31.664204 af90 [:1977] SstFileManager instance 0000028E6D607B50
+2026/02/06-18:26:31.665047 af90 DB pointer 0000028E6D5FDA00
+2026/02/06-18:26:31.665635 6ea0 [:1085] ------- DUMPING STATS -------
+2026/02/06-18:26:31.665665 6ea0 [c STATS -------:1086] 
+** DB Stats **
+Uptime(secs): 0.1 total, 0.1 interval
+Cumulative writes: 0 writes, 0 keys, 0 commit groups, 0.0 writes per commit group, ingest: 0.00 GB, 0.00 MB/s
+Cumulative WAL: 0 writes, 0 syncs, 0.00 writes per sync, written: 0.00 GB, 0.00 MB/s
+Cumulative stall: 00:00:0.000 H:M:S, 0.0 percent
+Interval writes: 0 writes, 0 keys, 0 commit groups, 0.0 writes per commit group, ingest: 0.00 MB, 0.00 MB/s
+Interval WAL: 0 writes, 0 syncs, 0.00 writes per sync, written: 0.00 GB, 0.00 MB/s
+Interval stall: 00:00:0.000 H:M:S, 0.0 percent
+Write Stall (count): write-buffer-manager-limit-stops: 0, 
+** Compaction Stats [default] **
+Level    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Moved(GB) W-Amp Rd(MB/s) Wr(MB/s) Comp(sec) CompMergeCPU(sec) Comp(cnt) Avg(sec) KeyIn KeyDrop Rblob(GB) Wblob(GB)
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  L0      2/0   179.20 KB   0.5      0.0     0.0      0.0       0.0      0.0       0.0   1.0      0.0      8.6      0.02              0.00         1    0.020       0      0       0.0       0.0
+ Sum      2/0   179.20 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   1.0      0.0      8.6      0.02              0.00         1    0.020       0      0       0.0       0.0
+ Int      0/0    0.00 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   1.0      0.0      8.6      0.02              0.00         1    0.020       0      0       0.0       0.0
+
+** Compaction Stats [default] **
+Priority    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Moved(GB) W-Amp Rd(MB/s) Wr(MB/s) Comp(sec) CompMergeCPU(sec) Comp(cnt) Avg(sec) KeyIn KeyDrop Rblob(GB) Wblob(GB)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+User      0/0    0.00 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   0.0      0.0      8.6      0.02              0.00         1    0.020       0      0       0.0       0.0
+
+Blob file count: 0, total size: 0.0 GB, garbage size: 0.0 GB, space amp: 0.0
+
+Uptime(secs): 0.1 total, 0.1 interval
+Flush(GB): cumulative 0.000, interval 0.000
+AddFile(GB): cumulative 0.000, interval 0.000
+AddFile(Total Files): cumulative 0, interval 0
+AddFile(L0 Files): cumulative 0, interval 0
+AddFile(Keys): cumulative 0, interval 0
+Cumulative compaction: 0.00 GB write, 1.47 MB/s write, 0.00 GB read, 0.00 MB/s read, 0.0 seconds
+Interval compaction: 0.00 GB write, 1.47 MB/s write, 0.00 GB read, 0.00 MB/s read, 0.0 seconds
+Write Stall (count): cf-l0-file-count-limit-delays-with-ongoing-compaction: 0, cf-l0-file-count-limit-stops-with-ongoing-compaction: 0, l0-file-count-limit-delays: 0, l0-file-count-limit-stops: 0, memtable-limit-delays: 0, memtable-limit-stops: 0, pending-compaction-bytes-delays: 0, pending-compaction-bytes-stops: 0, total-delays: 0, total-stops: 0, Block cache LRUCache@0000028E6D5F5760#43852 capacity: 8.00 MB usage: 0.08 KB table_size: 256 occupancy: 87 collections: 1 last_copies: 0 last_secs: 6.7e-05 secs_since: 0
+Block cache entry stats(count,size,portion): Misc(1,0.00 KB,0%)
+
+** File Read Latency Histogram By Level [default] **

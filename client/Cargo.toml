@@ -1,10 +1,12 @@
 [package]
 name = "client"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
 
 [dependencies]
-common = { path = "../common"}
-tonic = " 0.10"
+common = { path = "../common" }
+tonic = "0.10"
 prost = "0.12"
 tokio = { version = "1.0", features = ["full"] }
+clap = { version = "4.4", features = ["derive"] } # For command line args
+anyhow = "1.0" # For easy error handling

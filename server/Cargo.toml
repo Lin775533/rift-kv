@@ -1,12 +1,15 @@
 [package]
 name = "server"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
 
 [dependencies]
-common = {path = "../common"}
+common = { path = "../common" }
 tonic = "0.10"
 prost = "0.12"
-tokio = { version =  "1.0", features = ["full"]}
-dashmap = "5.5"
-clap = {version = "4.4", features = ["derive"]}
+tokio = { version = "1.0", features = ["full"] }
+clap = { version = "4.4", features = ["derive"] }
+rand = "0.8"       # Needed for randomized election timeouts
+rocksdb = "0.21"   # The persistent storage engine
+anyhow = "1.0"     # Easier error handling
+dashmap = "5.5"    # (Keeping this temporarily until we finish the refactor)
